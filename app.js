@@ -28,11 +28,14 @@ const cultureData = {
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+let activeCulture = "peiligang";
 
 function renderCulture(key) {
   const data = cultureData[key];
   if (!data) return;
+  activeCulture = key;
   $$(".culture-card, .timeline-pill").forEach((item) => item.classList.toggle("active", item.dataset.culture === key));
+  $$('[data-guide-culture]').forEach((item) => item.classList.toggle("active", item.dataset.guideCulture === key));
   $("#detailIndex").textContent = data.index;
   $("#detailPeriod").textContent = data.period;
   $("#detailRegion").textContent = data.region;
@@ -42,8 +45,7 @@ function renderCulture(key) {
   $("#detailTags").innerHTML = data.tags.map((tag) => "<span>" + tag + "</span>").join("");
   const visual = $("#detailVisual");
   visual.dataset.object = data.object;
-  const object = visual.querySelector(".visual-object");
-  object.className = "visual-object object-" + data.object;
+  visual.querySelector(".visual-object").className = "visual-object object-" + data.object;
 }
 
 $$('[data-culture]').forEach((item) => item.addEventListener("click", () => renderCulture(item.dataset.culture)));
@@ -61,6 +63,23 @@ $("#copyFrame").addEventListener("click", async (event) => {
   catch { event.currentTarget.textContent = "Select to copy"; }
   setTimeout(() => { event.currentTarget.textContent = "Copy"; }, 1600);
 });
+
+$("#shareCulture").addEventListener("click", async (event) => {
+  const data = cultureData[activeCulture];
+  const url = new URL(window.location.href);
+  url.searchParams.set("culture", activeCulture);
+  url.hash = "cultures";
+  try {
+    if (navigator.share) await navigator.share({ title: data.title, text: "Explore " + data.title + " with this reading note.", url: url.toString() });
+    else await navigator.clipboard.writeText(url.toString());
+    event.currentTarget.innerHTML = navigator.share ? "Shared <span>✓</span>" : "Link copied <span>✓</span>";
+  } catch {
+    event.currentTarget.innerHTML = "Copy link <span>↗</span>";
+  }
+  setTimeout(() => { event.currentTarget.innerHTML = "Share this culture <span>↗</span>"; }, 1800);
+});
+
+$("#printGuide").addEventListener("click", () => window.print());
 
 const quiz = [
   { question: "Which clue is most closely associated with Liangzhu?", options: ["A. Painted red pottery motifs", "B. Jade objects and planned water systems", "C. A black, highly polished thin-walled cup"], correct: 1, note: "Liangzhu is a useful case for connecting rice agriculture, water management and jade ritual objects." },
@@ -92,7 +111,6 @@ function selectAnswer(button) {
   const isCorrect = selectedAnswer === item.correct;
   button.classList.add(isCorrect ? "correct" : "incorrect");
   if (!isCorrect) $$("#quizOptions button")[item.correct].classList.add("correct");
-  
   $("#quizFeedback").textContent = (isCorrect ? "Good reading." : "Try the evidence again.") + " " + item.note;
   $("#nextQuestion").disabled = false;
   $("#nextQuestion").innerHTML = quizIndex === quiz.length - 1 ? "Restart quiz <span>↻</span>" : "Next question <span>→</span>";
@@ -104,4 +122,5 @@ $("#nextQuestion").addEventListener("click", () => {
 });
 
 renderQuiz();
-renderCulture("peiligang");
+const requestedCulture = new URLSearchParams(window.location.search).get("culture");
+renderCulture(cultureData[requestedCulture] ? requestedCulture : "peiligang");
