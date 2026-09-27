@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An interactive English reading page about five Neolithic cultures in China." />
+    <title>Reading to Explore · Prehistoric China</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Reading to Explore home">
+        <span class="brand-mark">◒</span>
+        <span>Reading to Explore</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#timeline">Timeline</a>
+        <a href="#cultures">Cultures</a>
+        <a href="#activity">Activity</a>
+      </nav>
+      <button class="outline-button" id="contrastToggle" type="button" aria-pressed="false">Focus mode</button>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> English reading · classroom explorer</p>
+          <h1>China’s prehistoric past,<br /><em>one clue at a time.</em></h1>
+          <p class="hero-lede">Travel across early villages, painted pottery, rice fields, jade rituals and emerging cities. Read the evidence, compare the cultures, and build your own explanation.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#cultures">Explore the cultures <span>↗</span></a>
+            <a class="text-button" href="#activity">Jump to the task <span>↓</span></a>
+          </div>
+          <div class="hero-stats" aria-label="Page overview">
+            <div><strong>5</strong><span>cultures</span></div>
+            <div><strong>4</strong><span>evidence lenses</span></div>
+            <div><strong>1</strong><span>shareable story</span></div>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Illustrated archaeological field notes">
+          <div class="sun-disc"></div>
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="mountain mountain-back"></div>
+          <div class="mountain mountain-front"></div>
+          <div class="artifact artifact-jade" title="Jade cong illustration"><span></span></div>
+          <div class="artifact artifact-pot" title="Painted pottery illustration"><span></span></div>
+          <div class="artifact artifact-bowl" title="Black pottery illustration"><span></span></div>
+          <div class="hero-label label-jade">jade / belief</div>
+          <div class="hero-label label-pottery">pottery / daily life</div>
+          <div class="hero-stamp">FIELD<br />NOTES<br /><small>NEOLITHIC CHINA</small></div>
+        </div>
+      </section>
+
+      <section class="brief section-shell" aria-labelledby="brief-title">
+        <div class="brief-slide">
+          <div class="slide-top"><span class="home-icon">⌂</span><span>Reading to Explore</span><span class="slide-tab">Task 2</span></div>
+          <div class="slide-body">
+            <p class="slide-kicker">Task 2 <span>(Optional)</span></p>
+            <p class="slide-instruction">Read more about China’s prehistoric period. Try to supply some details for the major cultures and sites in the chart below, and share your findings with your classmates.</p>
+            <div class="mini-table" role="presentation">
+              <div><b>01</b><span>Peiligang Culture</span><i></i></div>
+              <div><b>02</b><span>Liangzhu Culture</span><i></i></div>
+              <div><b>03</b><span>Cishan Culture</span><i></i></div>
+              <div><b>04</b><span>Yangshao Culture</span><i></i></div>
+              <div><b>05</b><span>Longshan Culture</span><i></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="brief-copy">
+          <p class="section-tag">Your mission</p>
+          <h2>Turn a chart into a story.</h2>
+          <p id="brief-title">The slide gives you five names. This page gives you the clues behind them. Notice how food, settlement, craft and belief can reveal how a community lived.</p>
+          <div class="lens-row">
+            <span><i class="lens-icon">⌁</i> Food</span>
+            <span><i class="lens-icon">▦</i> Settlement</span>
+            <span><i class="lens-icon">◌</i> Craft</span>
+            <span><i class="lens-icon">✦</i> Belief</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="timeline-section section-shell" id="timeline" aria-labelledby="timeline-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-tag">01 / Place the clues</p>
+            <h2 id="timeline-title">A long arc of change</h2>
+          </div>
+          <p class="section-note">Dates are approximate BCE ranges. Cultures overlapped and developed differently across regions.</p>
+        </div>
+        <div class="timeline-wrap">
+          <div class="timeline-axis"><span>7000 BCE</span><span>5000 BCE</span><span>3000 BCE</span><span>1900 BCE</span></div>
+          <div class="timeline-track" aria-label="Approximate timeline from 7000 BCE to 1900 BCE">
+            <button class="timeline-pill pill-peili" data-culture="peiligang"><span>Peiligang</span><small>7000–5000 BCE</small></button>
+            <button class="timeline-pill pill-cishan" data-culture="cishan"><span>Cishan</span><small>6500–5000 BCE</small></button>
+            <button class="timeline-pill pill-yangshao" data-culture="yangshao"><span>Yangshao</span><small>5000–3000 BCE</small></button>
+            <button class="timeline-pill pill-liangzhu" data-culture="liangzhu"><span>Liangzhu</span><small>3300–2300 BCE</small></button>
+            <button class="timeline-pill pill-longshan" data-culture="longshan"><span>Longshan</span><small>3000–1900 BCE</small></button>
+          </div>
+        </div>
+        <p class="timeline-caption"><span class="caption-line"></span>Follow the overlaps: a new culture did not simply erase the one before it.</p>
+      </section>
+
+      <section class="cultures-section section-shell" id="cultures" aria-labelledby="cultures-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-tag">02 / Compare the evidence</p>
+            <h2 id="cultures-title">Five cultures, five signatures</h2>
+          </div>
+          <p class="section-note">Select a card to open a short reading note. Then use the four lenses to make your own comparison.</p>
+        </div>
+        <div class="culture-layout">
+          <div class="culture-grid" role="list" aria-label="Prehistoric cultures">
+            <button class="culture-card active" data-culture="peiligang" role="listitem">
+              <span class="card-number">01</span><span class="card-symbol symbol-grain">⌁</span>
+              <span class="card-name">Peiligang</span><span class="card-cn">裴李岗文化</span>
+              <span class="card-region">Central Plains</span><span class="card-arrow">↗</span>
+            </button>
+            <button class="culture-card" data-culture="liangzhu" role="listitem">
+              <span class="card-number">02</span><span class="card-symbol symbol-jade">◇</span>
+              <span class="card-name">Liangzhu</span><span class="card-cn">良渚文化</span>
+              <span class="card-region">Lower Yangtze</span><span class="card-arrow">↗</span>
+            </button>
+            <button class="culture-card" data-culture="cishan" role="listitem">
+              <span class="card-number">03</span><span class="card-symbol symbol-seed">✣</span>
+              <span class="card-name">Cishan</span><span class="card-cn">磁山文化</span>
+              <span class="card-region">North China</span><span class="card-arrow">↗</span>
+            </button>
+            <button class="culture-card" data-culture="yangshao" role="listitem">
+              <span class="card-number">04</span><span class="card-symbol symbol-wave">≈</span>
+              <span class="card-name">Yangshao</span><span class="card-cn">仰韶文化</span>
+              <span class="card-region">Yellow River</span><span class="card-arrow">↗</span>
+            </button>
+            <button class="culture-card" data-culture="longshan" role="listitem">
+              <span class="card-number">05</span><span class="card-symbol symbol-wheel">◉</span>
+              <span class="card-name">Longshan</span><span class="card-cn">龙山文化</span>
+              <span class="card-region">Lower Yellow River</span><span class="card-arrow">↗</span>
+            </button>
+          </div>
+          <article class="detail-panel" aria-live="polite">
+            <div class="detail-top"><span class="detail-index" id="detailIndex">01</span><span class="detail-period" id="detailPeriod">c. 7000–5000 BCE</span></div>
+            <div class="detail-visual" id="detailVisual" aria-hidden="true"><span class="visual-ring ring-a"></span><span class="visual-ring ring-b"></span><span class="visual-object object-grain"></span></div>
+            <p class="detail-region" id="detailRegion">Central Plains · early village life</p>
+            <h3 id="detailTitle">Peiligang Culture</h3>
+            <p class="detail-text" id="detailText">Peiligang communities are often discussed through the evidence of early villages, pottery and plant cultivation. Look for the quiet clues: storage, tools and everyday vessels tell us how people organised life around food.</p>
+            <div class="detail-tags" id="detailTags"><span>settlement</span><span>pottery</span><span>food</span></div>
+            <div class="evidence-box"><span class="evidence-label">Reading prompt</span><p id="detailPrompt">What would a storage vessel tell you about a community?</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="activity-section section-shell" id="activity" aria-labelledby="activity-title">
+        <div class="activity-copy">
+          <p class="section-tag">03 / Make your claim</p>
+          <h2 id="activity-title">Can you read the evidence?</h2>
+          <p>Choose an answer, check your reasoning, then use the sentence frame to share one finding with your classmates.</p>
+          <div class="sentence-frame"><span>Sentence frame</span><p>“The evidence suggests that ______ because ______.”</p><button id="copyFrame" type="button">Copy</button></div>
+        </div>
+        <div class="quiz-card">
+          <div class="quiz-progress"><span id="quizStep">01 / 03</span><span class="progress-dots"><i class="filled"></i><i></i><i></i></span></div>
+          <h3 id="quizQuestion">Which clue is most closely associated with Liangzhu?</h3>
+          <div class="quiz-options" id="quizOptions">
+            <button data-answer="0" type="button">A. Painted red pottery motifs</button>
+            <button data-answer="1" type="button">B. Jade objects and planned water systems</button>
+            <button data-answer="2" type="button">C. A black, highly polished thin-walled cup</button>
+          </div>
+          <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
+          <button class="next-button" id="nextQuestion" type="button" disabled>Check answer <span>→</span></button>
+        </div>
+      </section>
+
+      <section class="sources-section section-shell" aria-labelledby="sources-title">
+        <div>
+          <p class="section-tag">Keep exploring</p>
+          <h2 id="sources-title">Start with a question.</h2>
+        </div>
+        <div class="source-list">
+          <figure class="archive-image">
+            <img src="https://live.staticflickr.com/7323/9845725105_1cfce5191f_o.jpg" alt="A Liangzhu jade cong from Wikimedia Commons" loading="lazy" />
+            <figcaption>Object spotlight · Liangzhu jade cong · Gary Todd / Wikimedia Commons (CC0)</figcaption>
+          </figure>
+          <a href="https://whc.unesco.org/en/list/1592" target="_blank" rel="noreferrer">UNESCO · Archaeological Ruins of Liangzhu City <span>↗</span></a>
+          <a href="https://commons.wikimedia.org/wiki/File:Liangzhu_Culture_Jade_Cong.jpg" target="_blank" rel="noreferrer">Wikimedia Commons · image source and license <span>↗</span></a>
+          <p>Visual direction: exhibition-style storytelling inspired by museum and heritage-site pages. Dates and descriptions are intentionally concise classroom prompts, not a complete archaeological survey.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer section-shell"><span>Reading to Explore</span><span>Ancient clues · new questions</span><span>© classroom edition</span></footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
