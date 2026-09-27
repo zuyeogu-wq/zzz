@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#top">Skip to content</a>
     <div class="grain" aria-hidden="true"></div>
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Reading to Explore home">
@@ -17,6 +18,7 @@
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#timeline">Timeline</a>
         <a href="#cultures">Cultures</a>
+        <a href="#field-guide">Field guide</a>
         <a href="#activity">Activity</a>
       </nav>
       <button class="outline-button" id="contrastToggle" type="button" aria-pressed="false">Focus mode</button>
@@ -147,8 +149,38 @@
             <p class="detail-text" id="detailText">Peiligang communities are often discussed through the evidence of early villages, pottery and plant cultivation. Look for the quiet clues: storage, tools and everyday vessels tell us how people organised life around food.</p>
             <div class="detail-tags" id="detailTags"><span>settlement</span><span>pottery</span><span>food</span></div>
             <div class="evidence-box"><span class="evidence-label">Reading prompt</span><p id="detailPrompt">What would a storage vessel tell you about a community?</p></div>
+            <button class="detail-share" id="shareCulture" type="button">Share this culture <span>↗</span></button>
           </article>
         </div>
+      </section>
+
+      <section class="field-guide section-shell" id="field-guide" aria-labelledby="field-guide-title">
+        <div class="section-heading guide-heading">
+          <div>
+            <p class="section-tag">Field guide / Fill the chart</p>
+            <h2 id="field-guide-title">Five clues, side by side.</h2>
+          </div>
+          <div class="guide-actions">
+            <p class="section-note">Use the four lenses to turn quick notes into a comparison you can share.</p>
+            <button class="outline-button" id="printGuide" type="button">Print guide</button>
+          </div>
+        </div>
+        <div class="guide-table-wrap">
+          <table class="guide-table">
+            <caption>Quick comparison chart for five prehistoric cultures in China</caption>
+            <thead>
+              <tr><th scope="col">Culture</th><th scope="col">Approx. dates</th><th scope="col">Region</th><th scope="col">Food / water</th><th scope="col">Craft / belief</th><th scope="col">Settlement clue</th></tr>
+            </thead>
+            <tbody>
+              <tr data-guide-culture="peiligang"><th scope="row">Peiligang<br /><small>裴李岗</small></th><td>7000–5000 BCE</td><td>Central Plains</td><td>Plant cultivation<br />storage</td><td>Pottery<br />stone tools</td><td>Early village life</td></tr>
+              <tr data-guide-culture="liangzhu"><th scope="row">Liangzhu<br /><small>良渚</small></th><td>3300–2300 BCE</td><td>Lower Yangtze</td><td>Rice<br />water systems</td><td>Jade objects<br />ritual</td><td>Planned spaces<br />social difference</td></tr>
+              <tr data-guide-culture="cishan"><th scope="row">Cishan<br /><small>磁山</small></th><td>6500–5000 BCE</td><td>North China</td><td>Millet<br />storage pits</td><td>Stone tools<br />pottery</td><td>Village planning</td></tr>
+              <tr data-guide-culture="yangshao"><th scope="row">Yangshao<br /><small>仰韶</small></th><td>5000–3000 BCE</td><td>Yellow River</td><td>Millet<br />farming</td><td>Painted pottery<br />repeated motifs</td><td>Village communities</td></tr>
+              <tr data-guide-culture="longshan"><th scope="row">Longshan<br /><small>龙山</small></th><td>3000–1900 BCE</td><td>Lower Yellow River</td><td>Food production<br />regional change</td><td>Black pottery<br />specialised craft</td><td>Complex settlements<br />social change</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="guide-note"><span class="caption-line"></span>Dates overlap and evidence varies by site. Treat each row as a starting point for a question, not a final answer.</p>
       </section>
 
       <section class="activity-section section-shell" id="activity" aria-labelledby="activity-title">
